@@ -54,17 +54,169 @@
             android:fontFamily="sans-serif-medium"
             android:id="@+id/sendNation"
             app:layout_constraintVertical_chainStyle="packed"/>
-        <Spinner
-            android:layout_width="100dp"
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/sendNation"
             app:layout_constraintBottom_toBottomOf="@id/sendNation"
-            android:layout_marginEnd="20dp"/>
+            android:text="미국(USD)"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sendLayout"
+        android:id="@+id/receiverLayout"
+        android:padding="20dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:text="수취 국가"
+            android:textSize="15sp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/receiverNation"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/receiverNation"
+            app:layout_constraintBottom_toBottomOf="@id/receiverNation"
+            android:id="@+id/receiverSpinner"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/receiverLayout"
+        android:id="@+id/ExchangeRateLayout"
+        android:padding="20dp"
+        app:layout_constraintVertical_chainStyle="packed">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="환율"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/ExchangeRateTxt"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ExchangeRateTxt"
+            app:layout_constraintBottom_toBottomOf="@id/ExchangeRateTxt"
+            tools:text="1,130.05 KRW / USD"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/ExchangeRateMoney"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ExchangeRateLayout"
+        android:id="@+id/searchTimeLayout"
+        android:padding="20dp"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="15sp"
+            android:text="조회시간"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="20dp"
+            android:id="@+id/searchTimeTxt"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/searchTimeTxt"
+            app:layout_constraintBottom_toBottomOf="@id/searchTimeTxt"
+            tools:text="2015-01-10 15:30"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/searchTime"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchTimeLayout"
+        android:padding="20dp"
+        android:id="@+id/sendMoneyLayout"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="송금액"
+            android:layout_marginStart="35dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/sendMoneyTxt"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sendMoneyTxt"
+            app:layout_constraintBottom_toBottomOf="@id/sendMoneyTxt"
+            android:text="USD"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/sendMoneyUSD"/>
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/sendMoneyUSD"
+            app:layout_constraintTop_toTopOf="@id/sendMoneyUSD"
+            app:layout_constraintBottom_toBottomOf="@id/sendMoneyUSD"
+            android:layout_marginEnd="10dp"
+            android:textSize="13sp"
+            tools:text="100"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:inputType="numberDecimal"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
