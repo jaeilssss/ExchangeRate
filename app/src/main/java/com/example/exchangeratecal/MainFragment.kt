@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.exchangeratecal.databinding.MainFragmentBinding
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 class MainFragment : Fragment() {
 
@@ -19,6 +22,7 @@ class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
 
     private lateinit var binding : MainFragmentBinding
+    private val scope = MainScope()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +45,16 @@ class MainFragment : Fragment() {
             context?.let { ArrayAdapter(it, R.layout.support_simple_spinner_dropdown_item,resources.getStringArray(R.array.receiver_nation)) }
         binding.receiverSpinner.adapter =adapter
 
+
+        scope.launch {
+            var data =  Repository.getExchangeRateData("KRW")
+            if(data!=null){
+
+                Toast.makeText(context,data.quotes!!.uSDKRW.toString(), Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context,"null", Toast.LENGTH_SHORT).show()
+            }
+        }
         // TODO: Use the ViewModel
     }
 
