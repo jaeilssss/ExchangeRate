@@ -60,7 +60,7 @@ class MainFragment : Fragment() {
         setLoading()
         scope.launch {
             try{
-                data = Repository.getExchangeRateData("KRW")!!
+                data = Repository.getExchangeRateData()!!
                 setTouch()
             }catch (e : TimeoutException){
 

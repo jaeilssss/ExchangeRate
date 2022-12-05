@@ -11,9 +11,9 @@ import retrofit2.create
 object Repository {
 
 
-    suspend fun getExchangeRateData(currencies : String) : DataX? {
+    suspend fun getExchangeRateData() : DataX? {
 
-        return exchangeRateApiService.test("USD",BuildConfig.API_KEY)
+        return exchangeRateApiService.getData("USD",BuildConfig.API_KEY)
                 .body()
 
 

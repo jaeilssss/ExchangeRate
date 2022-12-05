@@ -12,7 +12,7 @@ interface ExchangeRateApiService {
 
 
     @GET("live")
-    suspend fun test(
+    suspend fun getData(
             @Query("source") source : String,
             @Header("apikey") key : String
     ) : Response<DataX>
