@@ -21,6 +21,7 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeoutException
 
 class MainFragment : Fragment() {
 
@@ -58,8 +59,12 @@ class MainFragment : Fragment() {
         setNotTouch()
         setLoading()
         scope.launch {
-            data = Repository.getExchangeRateData("KRW")!!
-            setTouch()
+            try{
+                data = Repository.getExchangeRateData("KRW")!!
+                setTouch()
+            }catch (e : TimeoutException){
+
+            }
 
         }
 
