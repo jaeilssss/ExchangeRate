@@ -1,6 +1,6 @@
 package com.example.exchangeratecal
 
-import com.example.exchangeratecal.model.data
+import com.example.exchangeratecal.model.DataX
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,9 +11,9 @@ import retrofit2.create
 object Repository {
 
 
-    suspend fun getExchangeRateData(currencies : String) : data? {
+    suspend fun getExchangeRateData(currencies : String) : DataX? {
 
-        return exchangeRateApiService.test("USD",currencies,BuildConfig.API_KEY)
+        return exchangeRateApiService.test("USD",BuildConfig.API_KEY)
                 .body()
 
 

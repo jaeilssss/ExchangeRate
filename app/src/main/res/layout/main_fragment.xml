@@ -15,6 +15,28 @@
     android:layout_height="match_parent"
     tools:context=".MainFragment">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/ic_baseline_loop_24"
+        android:id="@+id/loop"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loop"
+        android:text="잠시만 기다려 주세요 "
+        android:textSize="19dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:id="@+id/loop_text"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -214,10 +236,28 @@
             android:layout_marginEnd="10dp"
             android:textSize="13sp"
             tools:text="100"
+            android:text="@={model.money}"
             android:textColor="@color/black"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
+            android:maxLength="1000000"
+            android:id="@+id/moneyedit"
             android:inputType="numberDecimal"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sendMoneyLayout"
+        tools:text="수취 금액은 113,004.93 KRW 입니다"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:id="@+id/result"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
